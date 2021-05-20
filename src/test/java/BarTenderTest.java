@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class BarTenderTest {
-
+//By Jens
     @Test
     public void buyBeertest(){
         Customer customer = new Customer("Pearl",14,1.00,true,false);
