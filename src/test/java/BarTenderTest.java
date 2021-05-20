@@ -14,7 +14,11 @@ public class BarTenderTest {
 
     @Test
     public void buyCoctailTest(){
-
+        Customer customer = new Customer("Pearl",14,1.00,true,false);
+        BarTender barTender = new BarTender("Jens", 1.5, 3.5);
+        barTender.buyCocktail(customer,2);
+        Assertions.assertEquals(1,customer.getEuros());
+        Assertions.assertEquals(0,customer.getDrinksThatTheyDrunk());
     }
 
 
