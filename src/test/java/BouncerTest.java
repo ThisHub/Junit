@@ -17,14 +17,11 @@ public class BouncerTest {
     @Test
     public void isCustomerOldEnoughToEnterTest() {
         bouncer.isCustomerOldEnoughToEnter(customer);
-        Assertions.assertTrue(true);
-        Assertions.assertFalse(false);
+        Assertions.assertFalse(bouncer.isCustomerOldEnoughToEnter(customer));
     }
 
     @Test
     public void isCustomerOldEnoughToEnterBribeTest() {
-        bouncer.isCustomerOldEnoughToEnter(customer, 100);
-        Assertions.assertTrue(true);
-
+        Assertions.assertTrue(bouncer.isCustomerOldEnoughToEnter(customer,100));
     }
 }
