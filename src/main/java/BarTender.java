@@ -31,7 +31,7 @@ public class BarTender extends Staff{
 
     public void buyBeer(Customer customer, int amount){
         if (customer.getEuros()>(getBeerPrice()*amount)){
-            customer.setBeersThatTheyDrunk(customer.getBeersThatTheyDrunk()+amount);
+            customer.setDrinksThatTheyDrunk(customer.getDrinksThatTheyDrunk()+amount);
             customer.setEuros(customer.getEuros()-amount*getBeerPrice());
         }else{
             System.out.println("You're out of money and out of luck buddy! No tabs! get out you bum!");
@@ -43,7 +43,7 @@ public class BarTender extends Staff{
 
     public void buyCocktail(Customer customer, int amount){
         if (customer.getEuros()>(getCocktailPrice()*amount)){
-            customer.setBeersThatTheyDrunk(customer.getBeersThatTheyDrunk()+amount);
+            customer.setDrinksThatTheyDrunk(customer.getDrinksThatTheyDrunk()+amount);
             customer.setEuros(customer.getEuros()-amount*getCocktailPrice());
         }else{
             System.out.println("You're out of money and out of luck buddy! No tabs! get out you bum!");
