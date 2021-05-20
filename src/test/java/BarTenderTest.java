@@ -21,5 +21,4 @@ public class BarTenderTest {
         Assertions.assertEquals(0,customer.getDrinksThatTheyDrunk());
     }
 
-
 }

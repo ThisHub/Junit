@@ -27,8 +27,6 @@ public class BarTender extends Staff{
         this.cocktailPrice = cocktailPrice;
     }
 
-
-
     public void buyBeer(Customer customer, int amount){
         if (customer.getEuros()>(getBeerPrice()*amount)){
             customer.setDrinksThatTheyDrunk(customer.getDrinksThatTheyDrunk()+amount);

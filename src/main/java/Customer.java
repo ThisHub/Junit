@@ -1,4 +1,5 @@
 public class Customer {
+    // AUTHOR : NEAL
 
     private String name;
     private int age;
@@ -8,7 +9,6 @@ public class Customer {
     private int drinksThatTheyDrunk;
     private final double tippingAmount = 1.50;
     double totalTippingAmount = getDrinksThatTheyDrunk() * tippingAmount;
-
 
     public Customer() {
     }
@@ -89,16 +89,18 @@ public class Customer {
 
          // Making this bcs tippingAmount is final // otherwise tippingAmount *= getBeersThatTheyDrunk()
 
-        System.out.println("I've drank " + getDrinksThatTheyDrunk() + " beers.");
+        System.out.println("I've drank " + getDrinksThatTheyDrunk() + " drinks.");
 
-        if(euros > totalTippingAmount) {
+        if(euros < totalTippingAmount) {
             System.out.println("I only got about " + String.format("%.2f",euros)  + " left, sorry can't tip bigger!");
-            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + "*");
+            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + " *");
             euros =- euros;
+            staff.setAmountsOfTips(staff.getAmountsOfTips() + euros);
         }
         else {
-            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + "*");
+            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + " *");
             euros =- totalTippingAmount;
+            staff.setAmountsOfTips(staff.getAmountsOfTips() + totalTippingAmount);
         }
         return euros;
     }
