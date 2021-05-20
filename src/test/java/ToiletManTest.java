@@ -25,7 +25,7 @@ public class ToiletManTest {
         bilal.promoteSafeFun(customer);
 
         Assertions.assertTrue(customer.isHasCondom());
-        
+
 
 
     }

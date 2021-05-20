@@ -23,7 +23,8 @@ public class BouncerTest {
 
     @Test
     public void isCustomerOldEnoughToEnterBribeTest() {
-        bouncer.isCustomerOldEnoughToEnter(customer);
+        bouncer.isCustomerOldEnoughToEnter(customer, 100);
+        Assertions.assertTrue(true);
 
     }
 }
