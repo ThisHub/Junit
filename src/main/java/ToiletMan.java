@@ -18,7 +18,7 @@ public class ToiletMan extends Staff {
 
 
 
-    private void fillToiletStallsWithToiletPaper(int amountOfStalls) throws Exception {
+    public void fillToiletStallsWithToiletPaper(int amountOfStalls) throws Exception {
         //remove the amount of your stock
         //this method will throw a selfmade Exception if you're
         //out of toilet paper
