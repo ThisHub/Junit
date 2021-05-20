@@ -69,15 +69,17 @@ public class Customer {
         this.drinksThatTheyDrunk = drinksThatTheyDrunk;
     }
 
-
     public boolean feelingConfident(){
         //check if they drank more than 5 beers, if they have a condom and if they're DTF
 
-        if(drinksThatTheyDrunk > 5 && hasCondom && DTF)
+        if(drinksThatTheyDrunk > 5 && hasCondom && DTF) {
             System.out.println("I am feeling confident!");
-        else System.out.println("I ain't got no confidence :(");
-
-        return false;
+            return true;
+        }
+        else {
+            System.out.println("I ain't got no confidence :(");
+            return false;
+        }
     }
 
     public double tipTheCuteStaff(Staff staff){
