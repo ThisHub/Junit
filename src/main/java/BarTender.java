@@ -30,12 +30,24 @@ public class BarTender extends Staff{
 
 
     public void buyBeer(Customer customer, int amount){
+        if (customer.getEuros()>(getBeerPrice()*amount)){
+            customer.setBeersThatTheyDrunk(customer.getBeersThatTheyDrunk()+amount);
+            customer.setEuros(customer.getEuros()-amount*getBeerPrice());
+        }else{
+            System.out.println("You're out of money and out of luck buddy! No tabs! get out you bum!");
+        }
         //check if customer has enough money
         //and make sure that the customer drinkAmount goes up
         // and money goes down if good
     }
 
     public void buyCocktail(Customer customer, int amount){
+        if (customer.getEuros()>(getCocktailPrice()*amount)){
+            customer.setBeersThatTheyDrunk(customer.getBeersThatTheyDrunk()+amount);
+            customer.setEuros(customer.getEuros()-amount*getCocktailPrice());
+        }else{
+            System.out.println("You're out of money and out of luck buddy! No tabs! get out you bum!");
+        }
         //check if customer has enough money
         //and make sure that the customer drinkAmount goes up
         // and money goes down if good
