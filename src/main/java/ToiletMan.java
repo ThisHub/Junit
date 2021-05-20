@@ -29,15 +29,23 @@ public class ToiletMan extends Staff {
 
         }
         this.toiletPaperStock -= amountOfStalls;
+
+
     }
 
-    private void promoteSafeFun(Customer customer){
+
+
+
+
+    public void promoteSafeFun(Customer customer){
         //check if Customer is DTF and if he has no condom
         //AND if he had less than 3 drinks
         //give them a condom
         //Guts
         if (customer.isDTF() && !customer.isHasCondom() && customer.getDrinksThatTheyDrunk()<3){
             customer.setHasCondom(true);
+
+
 
         }
     }

@@ -1,4 +1,5 @@
 public class Bouncer extends Staff {
+    //Mister D
 
 
     private double minimumBribe;
@@ -32,8 +33,8 @@ public class Bouncer extends Staff {
     public boolean isCustomerOldEnoughToEnter(Customer customer,double bribe){
         //check ID of the customer. If customer is too young, they can enter
         //if they give enough money based on minimumBribe
-        if(customer.getAge()<18 && customer.getEuros()>getMinimumBribe()){
-            customer.setEuros(customer.getEuros()-getMinimumBribe());
+        if(customer.getAge()<18 && bribe < customer.getEuros() && bribe >=getMinimumBribe()){
+            customer.setEuros(customer.getEuros()-bribe);
             return true;
         }else
 
