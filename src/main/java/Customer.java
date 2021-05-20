@@ -5,8 +5,9 @@ public class Customer {
     private double euros;
     private boolean DTF;
     private boolean hasCondom;
-    private int beersThatTheyDrunk;
+    private int drinksThatTheyDrunk;
     private final double tippingAmount = 1.50;
+
 
     public Customer() {
     }
@@ -59,26 +60,45 @@ public class Customer {
         this.hasCondom = hasCondom;
     }
 
-    public int getBeersThatTheyDrunk() {
-        return beersThatTheyDrunk;
+    public int getDrinksThatTheyDrunk() {
+        return drinksThatTheyDrunk;
     }
 
-    public void setBeersThatTheyDrunk(int beersThatTheyDrunk) {
-        this.beersThatTheyDrunk = beersThatTheyDrunk;
+    public void setDrinksThatTheyDrunk(int drinksThatTheyDrunk) {
+        this.drinksThatTheyDrunk = drinksThatTheyDrunk;
     }
 
 
     public boolean feelingConfident(){
         //check if they drank more than 5 beers, if they have a condom and if they're DTF
+
+        if(drinksThatTheyDrunk > 5 && hasCondom && DTF)
+            System.out.println("I am feeling confident!");
+        else System.out.println("I ain't got no confidence :(");
+
         return false;
     }
 
-    public int tipTheCuteStaff(Staff staff){
-        // check how many drinks you had.
+    public double tipTheCuteStaff(Staff staff){
+        //check how many drinks you had.
         //multiply that amount of drinks with the tippingAmount
         //check if you have enough money. If the amount is too low,
         //only give the amount that you have left
         //return the amount of money you have left
-        return 0;
+
+        double totalTippingAmount; // Making this bcs tippingAmount is final // otherwise tippingAmount *= getBeersThatTheyDrunk()
+
+        System.out.println("I've drank " + getDrinksThatTheyDrunk() + " beers.");
+        totalTippingAmount = getDrinksThatTheyDrunk() * tippingAmount;
+        if(euros > totalTippingAmount) {
+            System.out.println("I only got about " + String.format("%.2f",euros)  + " left, sorry can't tip bigger!");
+            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + "*");
+            euros =- euros;
+        }
+        else {
+            System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + "*");
+            euros =- totalTippingAmount;
+        }
+        return euros;
     }
 }
