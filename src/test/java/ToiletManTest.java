@@ -6,14 +6,17 @@ public class ToiletManTest {
     //Mister D's playground
 
     @Test
-    public void fillToiletStallsWithToiletPaperTest(){
+    public void fillToiletStallsWithToiletPaperTest() throws Exception {
         ToiletMan bilal = new ToiletMan("Bilal", 2);
-        bilal.fill
+        bilal.fillToiletStallsWithToiletPaper(1);
+        Assertions.assertEquals(1, bilal.getToiletPaperStock());
+        bilal.fillToiletStallsWithToiletPaper(2);
 
-        Assertions.
+        
+    }
     }
 
 
 
 
-}
+
