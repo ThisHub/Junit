@@ -7,6 +7,7 @@ public class Customer {
     private boolean hasCondom;
     private int drinksThatTheyDrunk;
     private final double tippingAmount = 1.50;
+    double totalTippingAmount = getDrinksThatTheyDrunk() * tippingAmount;
 
 
     public Customer() {
@@ -86,10 +87,10 @@ public class Customer {
         //only give the amount that you have left
         //return the amount of money you have left
 
-        double totalTippingAmount; // Making this bcs tippingAmount is final // otherwise tippingAmount *= getBeersThatTheyDrunk()
+         // Making this bcs tippingAmount is final // otherwise tippingAmount *= getBeersThatTheyDrunk()
 
         System.out.println("I've drank " + getDrinksThatTheyDrunk() + " beers.");
-        totalTippingAmount = getDrinksThatTheyDrunk() * tippingAmount;
+
         if(euros > totalTippingAmount) {
             System.out.println("I only got about " + String.format("%.2f",euros)  + " left, sorry can't tip bigger!");
             System.out.println("* tipping €" + String.format("%.2f",totalTippingAmount) + "*");
