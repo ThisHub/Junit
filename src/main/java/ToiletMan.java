@@ -22,6 +22,7 @@ public class ToiletMan extends Staff {
         //remove the amount of your stock
         //this method will throw a selfmade Exception if you're
         //out of toilet paper
+        //Guts
         if (toiletPaperStock < amountOfStalls) {
             throw new Exception("No luck use your hands sir");
 
@@ -34,6 +35,7 @@ public class ToiletMan extends Staff {
         //check if Customer is DTF and if he has no condom
         //AND if he had less than 3 drinks
         //give them a condom
+        //Guts
         if (customer.isDTF() && !customer.isHasCondom() && customer.getDrinksThatTheyDrunk()<3){
             customer.setHasCondom(true);
 
