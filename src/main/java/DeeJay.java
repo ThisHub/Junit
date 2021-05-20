@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeeJay extends Staff{
@@ -30,18 +31,32 @@ public class DeeJay extends Staff{
     }
 
 
-
+//By Jens
     public String playASong(){
-
+        String returnValue;
         //randomize the genres on your list(no need to junit this random part)
+        Collections.shuffle(genres);
         //Just make sure you add +1 to amountSongsEachNight
+        returnValue = "playing: " + genres.get(amountSongsANight).toString();
+        amountSongsANight += 1;
         //You can't ever exceed 7 songs each night, otherwise it returns the
         //underlying phrase
-        return "No more songs to play";
+        if (amountSongsANight > 7)
+            returnValue = "No more songs to play";
+        return returnValue;
 
     }
 
-    public void playARequest(Genre genre){
+    public void playARequest(Genre genre) throws NoSuchGenreException{
+
+        if (!genres.contains(genre))
+            throw new NoSuchGenreException("There is no such song");
+        else{
+            genres.add(amountSongsANight,genre);
+            System.out.println("Now playing: " + genres.get(amountSongsANight).toString());
+            amountSongsANight += 1;
+        }
+
         //throws an exception if this genre is
         //not in the genres of this Deejay
         //else, just play the genre and add one to the amountEachNight
