@@ -12,7 +12,7 @@ public class ToiletManTest {
         Assertions.assertEquals(1, bilal.getToiletPaperStock());
         bilal.fillToiletStallsWithToiletPaper(2);
 
-        
+
     }
     }
 
